@@ -20,10 +20,12 @@
              No new messages.
          </EmptyDataTemplate>
      </asp:GridView>
+       
      <br />
-     <asp:Button ID="btnRefresh" runat="server" Text="Refresh" />
  </div>
     <asp:Timer ID="tmrRefresh" runat="server" Enabled="true" Interval="1000" OnTick="tmrRefresh_Tick"></asp:Timer>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
     </form>
 </body>
 </html>

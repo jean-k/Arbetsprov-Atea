@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Message_Console_Application
 {
     [Serializable]
-    public class MessageList
+    public class MessageInfo
     {
         public string Message;
         public string Date;
