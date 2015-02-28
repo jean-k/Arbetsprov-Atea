@@ -1,9 +1,14 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Message.aspx.cs" Inherits="MessageReceiver_Webapp._Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Message.aspx.cs" Inherits="MessageReceiver_Webapp.Message" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<!DOCTYPE html>
 
-   
- <div>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
      <h1>Message Receiver</h1>
      <asp:GridView ID="gdMessages" runat="server">
          <Columns>
@@ -19,5 +24,6 @@
      <asp:Button ID="btnRefresh" runat="server" Text="Refresh" />
  </div>
     <asp:Timer ID="tmrRefresh" runat="server" Enabled="true" Interval="1000" OnTick="tmrRefresh_Tick"></asp:Timer>
-
-</asp:Content>
+    </form>
+</body>
+</html>
