@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LinqFetchData">
+  <DataContextMoniker Name="/LinqFetchDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a4f0e035-2300-418d-9cac-02983d192459" absoluteBounds="3.75, 1.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LinqFetchDataDataContext/MessageTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9812584d-7940-4354-b650-e1905e829244" absoluteBounds="3.7649999999999997, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

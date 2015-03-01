@@ -12,34 +12,27 @@ namespace MessageReceiver_Webapp
 {
     public partial class Message : System.Web.UI.Page
     {
-        HandleMessages hm = new HandleMessages();
-        List<MessageInfo> lstMessages = new List<MessageInfo>(); //get all messages from db
         protected void Page_Load(object sender, EventArgs e)
         {
-            //load all messages fom db
-
-            //FileStream fs = new FileStream(hm.savePath, FileMode.Open);
-            //lstConsolMessages = (MessageList)
-            //gdMessages.DataSource = lstConsolMessages;
-            //gdMessages.DataBind();
+            /* Här behövs det inte binda koppling mellan databasen och gridview'n då jag i designläget kopplat ihop sqldatasource till gridview'n med standard query, select* allt. 
+            Jag har valt att gömma MessageID på gridview'n för att få en snyggare tabell*/
         }
 
-
-        //Metoden visar senaste meddelandet.
-        protected void tmrRefresh_Tick(object sender, EventArgs e)
+        //Eventet återskapar meddelandet från websiten som skapades från consol appen, med senaste meddelandet
+        protected void tmrPartialUpdate_Tick(object sender, EventArgs e)
         {
             try
             {
-                string path = Server.MapPath(Request.ApplicationPath);
-                string filePath = Path.Combine(path.Substring(0, (path.Length - 24)), "Message Console Application\\MessageData\\MessageData.xml");
-                FileStream fs = new FileStream(filePath, FileMode.Open);
+                string path = Server.MapPath(Request.ApplicationPath) + "MessageData\\MessageData.xml";
+                FileStream fs = new FileStream(path, FileMode.Open);
                 try
                 {
                     XmlSerializer xs = new XmlSerializer(typeof(MessageInfo));
                     MessageInfo msg = (MessageInfo)xs.Deserialize(fs);
-                    fs.Close();
-                    lstMessages.Add(msg);
-                    Response.Write("<h1>" + msg.Message + " " + msg.Date + "</h1>");
+                    lbl_message.InnerText = msg.Message;
+                    lbl_date.InnerHtml = msg.Date.ToString();
+                    RebindData();
+
                 }
                 catch (Exception ex)
                 {
@@ -54,6 +47,14 @@ namespace MessageReceiver_Webapp
             {
                 Response.Write(ex);
             }
+        }
+
+        /* Uppdaterar databasens select sats samt konstruerar om gridviewn i updatepartial kontrollen 
+        för att förhindra att hela sidan laddas om*/        
+        void RebindData()
+        {
+            messageSourceConnection.DataBind();
+            gdMessages.DataBind();
         }
     }
 }

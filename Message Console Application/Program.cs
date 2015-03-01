@@ -13,16 +13,17 @@ namespace Message_Console_Application
         static void Main(string[] args)
         {
             /*
-             Hej! Jag har kommit på ett flertal lösningar vad gäller själva uppgiften i sig. Jag kör på serialization då jag gillar att "teleportera" data från ett ställe till ett annat. 
-             Jag försöker göra det så enkelt och effektivt som möjligt. Skall lägga till tester som testar varje moment av processen av data från konsol app till webben.
-             Tänkte fråga er om det hade varit värt att göra det så realtidsmässigt som möjligt. Men jag kör på det ändå då jag vill visa framfötterna!
+             Hej! Jag har kommit på ett flertal lösningar vad gäller själva uppgiften i sig. Jag har kommit fram till att jag skall använda mig av serialization för att kunna
+             * visa senaste meddelande som mottagist av hemsidan. Därefter skapa en realtids sida som uppdaterar senaste meddelande samt databasen utan att hela sidan laddas om
+             * detta för att skapa en realtidskänsla samt att det känns mer futuristiskt. Jag lägger fokus på att skriva effektiv och och robust kod
             */
 
+            //Själva menyn som kommer visas högst upp på konsoll appen
             Console.Title = "Arbetsprov - Atea";
             HandleMessages hm = new HandleMessages();
             Console.WriteLine("*** Welcome to the console to website application, made by Jean Kam.");
             Console.WriteLine();
-            Console.Write(" How it works:\n 1) Write a message \n 2) Press enter \n 3) Enjoy the list of messages on the website!\n");
+            Console.Write(" How it works:\n 1) Write a message \n 2) Press enter \n 3) Enjoy the incoming messages on the website!\n");
 
             Console.WriteLine(" To exit this application please write 'e' and press enter.");
             Console.WriteLine("\n");
