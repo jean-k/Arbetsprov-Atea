@@ -20,7 +20,7 @@ namespace Message_Console_Application
              * Rent kodmässigt så är det mycket bättre att ha mindre kodsnuttar i varje funktion för att göra det testvänligt, läsvänligt samt gör en komplex kodstruktur lättare att följa.
              * Prestandamässigt sätt så har jag studerat fram till att det är bäst att serializera så lite data som möjligt.
              * Dessutom är det vackrare användarvänlighet med realtids uppdatering av data. Det går att optimera databasdatan ännu mer genom att hämta bara ett antal data från databasen per realtidsuppdatering istället för hela databasen, ifall det skulle finnas 10 000 meddelanden så att säga.
-             * Rent testmässigt så har jag gjort en klass HandleMessages med en enda stor funktion. Det krävs en komplex test för att få allt ihop. Jag är inte duktig direkt på att skriva tester och det hade tagit längre tid för att göra test på denna funktion då det krävs databasmocks och serializerings test inkluderat.
+             * Rent testmässigt så har jag gjort en klass HandleMessages med en enda stor funktion. Det krävs en komplex test för att få allt ihop. Jag är inte duktig direkt på att skriva tester och det hade tagit längre tid för att göra test på denna funktion då det krävs databasfactory och serializerings test inkluderat.
              * */
 
             //Själva menyn som kommer visas högst upp på konsoll appen
