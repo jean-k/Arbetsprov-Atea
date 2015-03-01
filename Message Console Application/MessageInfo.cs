@@ -19,6 +19,6 @@ namespace Message_Console_Application
         använda sig utav IDeserialization.OnDeserialization(object sender) metoden med uträkningen i metoden.
         Jag använder mig utav xmlserializer eftersom det gör data läsbart samt att admin kan lätt ändra på data. Det hade varit
         svårare att ändra data om det hade varit binärt serializerat, dv.s med hjälp avbinaryformatter, varje serialization klass har sin
-        för och nackdel, xmlserializer är bra främst som en opåverkad datafil som kan deserializeras av olika program samt operativsystem.
+        för och nackdel, xmlserializer är bra främst som en opåverkad datafil som kan deserializeras av olika program samt operativsystem.*/
     }
 }
